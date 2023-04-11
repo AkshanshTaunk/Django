@@ -1,6 +1,13 @@
 from django import forms
 class StudentRegistration(forms.Form):
-    name = forms.CharField(min_length=5,max_length=15)
-    roll_no = forms.IntegerField()
-    agree = forms.BooleanField()
+    name = forms.CharField()
+    email = forms.EmailField()
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    def clean_name(self):
+        valname = self.cleaned_data['name']
+        if len(valname) < 4:
+            raise forms.ValidationError("Enter more than or equal to 4")
+        return valname
+    
    
