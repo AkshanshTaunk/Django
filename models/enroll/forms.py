@@ -4,10 +4,13 @@ class StudentRegistration(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(widget=forms.PasswordInput)
 
-    def clean_name(self):
+    def clean(self):
+        cleaned_data=super().clean()
         valname = self.cleaned_data['name']
         if len(valname) < 4:
             raise forms.ValidationError("Enter more than or equal to 4")
-        return valname
+        valemail = self.cleaned_data['email']
+        if len(valemail) < 10:
+            raise forms.ValidationError("Enter more than or equal to 10")
     
    
