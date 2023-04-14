@@ -13,6 +13,7 @@ def showformdata(request):
              print('Name:',fm.cleaned_data['name'])
              print('Email',fm.cleaned_data['email'])
              print('Password:',fm.cleaned_data['password'])
+             print('Password(again):',fm.cleaned_data['rpassword'])
     else:
              fm=StudentRegistration()
     return render(request,'enroll/userregistration.html',{'form':fm}) 
