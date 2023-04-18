@@ -2,6 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('stu/',views.studinfo),
-         path('reg/',views.showformdata),
+        path('reg/<int:my_id>/',views.showformdata,name="detail"),
 ]
