@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Profile</title>
+</head>
+<style>
+    .success{
+        color: green;
+    }
+    .info{
+        color:red;
+    }
+</style>
+<body>
+    <h3>Welcome {{name}}</h3><br>
+    <a href ="{% url 'log_out' %}">logout</a>
+    {% if messages %}
+     {% for mess in messages %}
+     <p {% if mess.tags %} class="{{mess.tags}}" {% endif %}>
+     {{mess}}</p>
+     {% endfor %}
+    {% endif %}
+</body>
+
+</html>

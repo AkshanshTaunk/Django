@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>UserCreationForm</title>
+<title>Sign up</title>
 <style>
     .success{
         color: green;
@@ -25,7 +25,8 @@
      <p {% if mess.tags %} class="{{mess.tags}}" {% endif %}>
      {{mess}}</p>
      {% endfor %}
-    {% endif %}
+    {% endif %}<br>
+    <a href ="{% url 'log_in' %}">login</a>
 </body>
 
 </html>

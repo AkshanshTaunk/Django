@@ -19,5 +19,8 @@ from form import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signup/',views.sign_up)
+    path('signup/',views.sign_up,name='sign_up'),
+    path('login/',views.log_in,name='log_in'),
+    path('profile/',views.user_profile,name='profile'),
+    path('logout/',views.log_in,name='log_out'),
 ]
