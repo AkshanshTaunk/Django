@@ -17,14 +17,14 @@
 
 <body>
     <form actiom="" method="POST" novalidate >
-        {% csrf_token %}
-        {% if form.non_field_errors %}
+    {% csrf_token %}
+    {% if form.non_field_errors %}
         {% for error in form.non_field_errors  %}
-        <p class="er">{{error}}</p>
+         <p class="er">{{error}}</p>
         {% endfor %}
-        {% endif %}
+    {% endif %}
         {% for fm in form %}
-        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+         {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
         {% endfor %}
         <input type="submit" value="submit">
     </form><br>

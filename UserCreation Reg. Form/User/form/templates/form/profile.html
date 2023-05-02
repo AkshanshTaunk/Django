@@ -13,13 +13,25 @@
 </style>
 <body>
     <h3>Welcome {{name}}</h3><br>
-    <a href ="{% url 'log_out' %}">logout</a>
     {% if messages %}
      {% for mess in messages %}
      <p {% if mess.tags %} class="{{mess.tags}}" {% endif %}>
      {{mess}}</p>
      {% endfor %}
     {% endif %}
+    <form actiom="" method="POST" novalidate >
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+    {% for error in form.non_field_errors  %}
+     <p class="er">{{error}}</p>
+    {% endfor %}
+    {% endif %}
+    {% for fm in form %}
+      {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+    {% endfor %}
+    </form>
+    <a href ="{% url 'pass_change' %}">Change Password</a>
+    <a href ="{% url 'log_out' %}">logout</a>
 </body>
 
 </html>
