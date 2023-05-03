@@ -13,6 +13,12 @@
 </style>
 <body>
     <h3>Welcome {{name}}</h3><br>
+    {% if users != None %}
+    <h4><u>List Of User</u>:</h4><br>
+    {% for user in users %}
+    <a href="{% url 'user_detail' user.id %}"> {{user.username}}</a><br>
+    {% endfor %}
+    {% endif %}<br>
     {% if messages %}
      {% for mess in messages %}
      <p {% if mess.tags %} class="{{mess.tags}}" {% endif %}>
@@ -29,6 +35,7 @@
     {% for fm in form %}
       {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
     {% endfor %}
+    <input type="submit" value="save">
     </form>
     <a href ="{% url 'pass_change' %}">Change Password</a>
     <a href ="{% url 'log_out' %}">logout</a>

@@ -1,8 +1,9 @@
 from django.shortcuts import render,HttpResponseRedirect
-from .forms import signupform, EditUserProfileForm
+from .forms import signupform, EditUserProfileForm, EditAdminProfileForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import authenticate,login,logout, update_session_auth_hash
+from django.contrib.auth.models import User
 # Create your sign up views here.
 def sign_up(request):
     if request.method =="POST":
@@ -35,13 +36,23 @@ def log_in(request):
 def user_profile(request):
     if request.user.is_authenticated:
      if request.method=="POST":
-        fm = EditUserProfileForm(request.POST, instance=request.user)
+        if request.user.is_superuser == True:
+            fm = EditAdminProfileForm(request.POST,instance=request.user)
+            users = User.objects.all()
+        else:
+            fm = EditUserProfileForm(request.POST, instance=request.user)
+            users = None
         if fm.is_valid():
             messages.success(request,'Profile Upadted Successfully')
             fm.save()
      else:
-       fm = EditUserProfileForm(instance=request.user) 
-     return render(request,'form/profile.html',{'name':request.user,'form':fm})
+       if request.user.is_superuser == True:
+          fm = EditAdminProfileForm(instance=request.user)
+          users = User.objects.all()
+       else:
+          fm = EditUserProfileForm(instance=request.user) 
+          users = None
+     return render(request,'form/profile.html',{'name':request.user.username,'form':fm,'users':users})
     else:
      return HttpResponseRedirect('/login/')
 
@@ -65,3 +76,12 @@ def user_pass_change(request):
         return render(request,'form/changepass.html', {'form':fm})
     else:
        return HttpResponseRedirect('/login/')
+    
+# Create your user detail here.
+def user_detail(request,id):
+   if request.user.is_authenticated:
+      pi = User.objects.get(pk=id)
+      fm = EditAdminProfileForm(instance=pi)
+      return render(request,'form/userdetail.html',{'form':fm})
+   else:
+      return HttpResponseRedirect('/login/')

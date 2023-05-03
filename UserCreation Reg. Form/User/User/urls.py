@@ -24,4 +24,5 @@ urlpatterns = [
     path('profile/',views.user_profile,name='profile'),
     path('logout/',views.log_in,name='log_out'),
     path('changepass/',views.user_pass_change,name='pass_change'),
+    path('userdetail/<int:id>',views.user_detail,name='user_detail'),
 ]
