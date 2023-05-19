@@ -1,20 +1,15 @@
 from django.shortcuts import render
 
 # Create your views here.
-def setcookie(request):
-   response = render(request,'enroll/setcookie.html')
-#    response.set_cookie('name','yash',max_age=60)
-#    response.set_cookie('lname','taunk',max_age=60)
-   response.set_signed_cookie('name','yash',salt='nm',max_age=60)
-   return response
+def setsession(request):
+  request.session['name'] = 'Akshansh'
+  return render (request,'enroll/setsession.html')
 
-def getcookie(request):
-#    name = request.COOKIES['name']
-   name = request.get_signed_cookie('name',salt='nm')
-#    lname = request.COOKIES.get('lname',"guest")
-   return render(request,'enroll/getcookie.html',{'nm':name})
+def getsession(request):
+ name = request.session.get('name', default='Guest')
+ return render (request,'enroll/getsession.html',{'name':name})
 
-def delcookie(request):
-   response = render(request,'enroll/delcookie.html')
-   response.set_cookie('name')
-   return response
+def delsession(request):
+   if 'name' in request.session:
+     del request.session['name']
+   return render(request,'enroll/delsession.html')
