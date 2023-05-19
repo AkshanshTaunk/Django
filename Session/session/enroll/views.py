@@ -10,6 +10,7 @@ def getsession(request):
  return render (request,'enroll/getsession.html',{'name':name})
 
 def delsession(request):
-   if 'name' in request.session:
-     del request.session['name']
+   # if 'name' in request.session:
+   #   del request.session['name']# not completely deleted
+   request.session.flush()#completely deleted from database(dbsqlite) too
    return render(request,'enroll/delsession.html')
