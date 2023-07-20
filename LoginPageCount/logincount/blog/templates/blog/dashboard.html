@@ -16,12 +16,15 @@
 <div class="col-sm-2 text-white my-5 text-center">
   <h4 class="my-5">Profile</h4>
   <h5>{{full_name}}</h5>
+
   {% for group in groups %}
   <p>{{group.name}}</p>
   {% endfor %}
+
   <button type="button" class="btn btn-danger mt-3">
     Login Count: <span class="badge badge-success">{{ct}}</span>
   </button>
+  
 </div>
 {% endblock side %}
 
