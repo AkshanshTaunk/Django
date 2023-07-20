@@ -16,6 +16,7 @@ def about(request):
 def contact(request):
     return render(request,'blog/contact.html')
 
+# Create your user login views here.
 def user_login(request):
     if request.method == 'POST':
         fm=loginform(request=request,data=request.POST)
@@ -31,6 +32,7 @@ def user_login(request):
         fm = loginform()
     return render(request,'blog/login.html',{'form':fm})
 
+# Create your dashboard views here.
 def dashboard(request):
     if request.user.is_authenticated:
      posts = Post.objects.all()
@@ -42,11 +44,12 @@ def dashboard(request):
     else:
      return HttpResponseRedirect('/login/')
     
-
+# Create your user logout views here.
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect ('/')
 
+# Create your signup views here.
 def user_signup(request):
     if request.method =="POST":
         fm = signupform(request.POST)
@@ -60,7 +63,7 @@ def user_signup(request):
     return render(request,'blog/signup.html',{'form':fm})
 
 
-    
+# Create your user add post views here.
 def add_post(request):
     if request.user.is_authenticated:
      if request.method == 'POST':
@@ -76,7 +79,8 @@ def add_post(request):
      return render(request,'blog/addpost.html',{'form':fm})
     else:
      return HttpResponseRedirect('/login/')
-    
+
+# Create your update views here.  
 def update_post(request, id):
     if request.user.is_authenticated:
       if request.method == 'POST':
@@ -90,7 +94,8 @@ def update_post(request, id):
       return render(request,'blog/updatepost.html',{'form':fm}) 
     else:
       return HttpResponseRedirect('/login/')
-    
+
+# Create your delete views here. 
 def delete_post(request, id):
     if request.user.is_authenticated:
       if request.method == 'POST':
