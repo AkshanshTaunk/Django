@@ -51,7 +51,8 @@ MIDDLEWARE = [
     # 'blog.MWare.Brothermiddleware',
     # 'blog.MWare.Fathermiddleware',
     # 'blog.MWare.Mothermiddleware',
-    'blog.Mware.MyExceptionmiddleware',
+    # 'blog.Mware.MyExceptionmiddleware',
+    'blog.Mware.MyProcessMiddleware',
 ]
 
 ROOT_URLCONF = 'middleware.urls'
