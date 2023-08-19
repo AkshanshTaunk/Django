@@ -1,6 +1,6 @@
 from django.shortcuts import HttpResponse
 
-class MyProcessMiddleware:
+class MyTemplateResponseMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
         
@@ -8,9 +8,22 @@ class MyProcessMiddleware:
         response = self.get_response(request)
         return response
     
-    def process_view(request, *args, **kwargs):
+    def process_view(self, request, response):
         print("process view - before view")
-        return HttpResponse("This is before view from process view")
+        response.context_data['name']= 'Akshansh'
+        return response
+
+# class MyProcessMiddleware:
+#     def __init__(self, get_response):
+#         self.get_response = get_response
+        
+#     def __call__(self, request):
+#         response = self.get_response(request)
+#         return response
+    
+#     def process_view(request, *args, **kwargs):
+#         print("process view - before view")
+#         return HttpResponse("This is before view from process view")
 
 # class myExceptionmiddleware:
 #     def __init__(self, get_response):
