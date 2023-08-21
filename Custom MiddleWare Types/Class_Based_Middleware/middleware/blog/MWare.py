@@ -8,7 +8,7 @@ class MyTemplateResponseMiddleware:
         response = self.get_response(request)
         return response
     
-    def process_view(self, request, response):
+    def process_template_view(self, request, response):
         print("process view - before view")
         response.context_data['name']= 'Akshansh'
         return response
