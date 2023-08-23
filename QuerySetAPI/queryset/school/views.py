@@ -3,7 +3,9 @@ from .models import Student,Teacher
 # Create your views here.
 
 def home(request):
-    student_data = Student.objects.get(marks='90')
+    # student_data = Student.objects.create(name='yesh',roll=104,city='Surat',marks='99',pass_date='2023-03-07')
+    student_data = Student.objects.filter(id=4).update(name='jay',marks='99')
+    # student_data = Student.objects.latest('pass_date')
     # student_data = Student.objects.order_by('?')           #randomly
     # student_data = Student.objects.order_by('-marks')     #desc order
     # student_data = Student.objects.order_by('city')   #asc order
