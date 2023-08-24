@@ -48,5 +48,7 @@ def home(request):
 
 #     student_data = Student.objects.filter(marks='56').delete()
 
-    student_data = Student.objects.all().delete()
+    # student_data = Student.objects.all().delete()
+
+    student_data = Student.objects.filter(name__exact='jay')
     return render(request,'school/home.html',{'students':student_data})
