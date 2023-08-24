@@ -35,10 +35,10 @@ def home(request):
     # print("Return:",student_data)
     # print("SQL Query:",student_data.query)
 
-#     objs = [Student(name='ABC',roll='105',city='Srinagar',marks='56',pass_date='2021-08-09'),
-#             Student(name='DEF',roll='106',city='ganganagar',marks='45',pass_date='2021-12-05'),
-#             Student(name='GHI',roll='107',city='ganeshnagar',marks='76',pass_date='2023-11-04')]
-#     student_data = Student.objects.bulk_create(objs)
+    # objs = [Student(name='ABC',roll='105',city='Srinagar',marks='56',pass_date='2021-08-09'),
+    #         Student(name='DEF',roll='106',city='ganganagar',marks='45',pass_date='2021-12-05'),
+    #         Student(name='GHI',roll='107',city='ganeshnagar',marks='76',pass_date='2023-11-04')]
+    # student_data = Student.objects.bulk_create(objs)
 
 #     all_student_data = Student.objects.all()
 
@@ -50,5 +50,6 @@ def home(request):
 
     # student_data = Student.objects.all().delete()
 
-    student_data = Student.objects.filter(name__exact='jay')
+    # student_data = Student.objects.filter(name__exact='jay')
+    student_data = Student.objects.filter(pass_date__range=('2021-08-09','2023-08-01'))
     return render(request,'school/home.html',{'students':student_data})
