@@ -56,8 +56,10 @@ def home(request):
     # student_data = Student.objects.filter(pass_date__range=('2021-08-09','2023-08-01'))
 
     ##################### Q OBJECT #######################
-    student_data=Student.objects.filter(Q(id=8) & Q(roll=101))
+    # student_data=Student.objects.filter(Q(id=8) & Q(roll=101))
 
-    student_data=Student.objects.filter(Q(id=8) | Q(roll=105))
+    # student_data=Student.objects.filter(Q(id=8) | Q(roll=105))
+
+    # student_data=Student.objects.filter(~Q(roll=105))  #shows all detail without showing roll 105 data
 
     return render(request,'school/home.html',{'students':student_data})
