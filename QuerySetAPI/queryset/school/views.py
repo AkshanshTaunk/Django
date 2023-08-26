@@ -51,5 +51,9 @@ def home(request):
     # student_data = Student.objects.all().delete()
 
     # student_data = Student.objects.filter(name__exact='jay')
-    student_data = Student.objects.filter(pass_date__range=('2021-08-09','2023-08-01'))
+
+    # student_data = Student.objects.filter(pass_date__range=('2021-08-09','2023-08-01'))
+
+    ##################### Q OBJECT #######################
+    
     return render(request,'school/home.html',{'students':student_data})
