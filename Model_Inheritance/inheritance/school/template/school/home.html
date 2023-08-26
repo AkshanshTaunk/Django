@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INHERITANCE</title>
+</head>
+
+<body>
+<h3>Student Info</h3>
+
+<table>
+
+<th>Id</th>
+<th>Name</th>
+<th>Age</th>
+<th>Fees</th>
+
+{% for stu in student  %}
+<tr>
+<td>{{stu.id}}</td>
+
+<td>{{stu.name}}</td>
+
+<td>{{stu.age}}</td>
+
+<td>{{stu.fees}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Teachers Info</h3>
+
+<table>
+
+<th>Id</th>
+<th>Name</th>
+<th>Age</th>
+<th>Salary</th>
+<th>Date</th>
+{% for teach in teacher  %}
+<tr>
+<td>{{teach.id}}</td>
+
+<td>{{teach.name}}</td>
+
+<td>{{teach.age}}</td>
+
+<td>{{teach.salary}}</td>
+
+<td>{{teach.date}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Contractor Info</h3>
+
+<table>
+
+<th>Id</th>
+<th>Name</th>
+<th>Age</th>
+<th>Date</th>
+<th>Payment</th>
+
+{% for con in contractor  %}
+<tr>
+<td>{{con.id}}</td>
+
+<td>{{con.name}}</td>
+
+<td>{{con.age}}</td>
+
+<td>{{con.date}}</td>
+
+<td>{{con.Payment}}</td>
+
+</tr>
+{% endfor %}
+</table>
+</body>
+
+</html>
