@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Student,Teacher
+from django.db.models import Q
 # Create your views here.
 
 def home(request):
@@ -55,5 +56,8 @@ def home(request):
     # student_data = Student.objects.filter(pass_date__range=('2021-08-09','2023-08-01'))
 
     ##################### Q OBJECT #######################
-    
+    student_data=Student.objects.filter(Q(id=8) & Q(roll=101))
+
+    student_data=Student.objects.filter(Q(id=8) | Q(roll=105))
+
     return render(request,'school/home.html',{'students':student_data})
