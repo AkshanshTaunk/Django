@@ -55,7 +55,7 @@ ROOT_URLCONF = 'inheritance.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'D:\Django\Model_Inheritance\inheritance\school\template'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
