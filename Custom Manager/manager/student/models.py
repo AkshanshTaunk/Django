@@ -7,4 +7,9 @@ class Student(models.Model):
     roll=models.IntegerField()
 
     # objects = models.Manager()
+    
+class ProxyStudent(Student):
     students = CustomManager()
+    class Meta:
+        proxy=True
+        ordering = ['name']
