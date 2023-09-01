@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MANAGER</title>
+</head>
+
+<body>
+<h3>Student Info</h3>
+
+<table>
+
+<th>Id</th>
+<th>Name</th>
+<th>Roll Number</th>
+
+
+{% for stu in student  %}
+<tr>
+<td>{{stu.id}}</td>
+
+<td>{{stu.name}}</td>
+
+<td>{{stu.roll}}</td>
+
+</tr>
+{% endfor %}
+</table>
+</body>
+
+</html>
