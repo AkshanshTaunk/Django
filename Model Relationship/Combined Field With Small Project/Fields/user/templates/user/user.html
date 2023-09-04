@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User</title>
+</head>
+
+<body>
+<h3>Show User Data</h3>
+
+<table>
+
+<th>Username</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+
+{% for d1 in data1  %}
+<tr>
+<td>{{d1.username}}</td>
+
+<td>{{d1.first_name}}</td>
+
+<td>{{d1.last_name}}</td>
+
+<td>{{d1.email}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Show Filtered by User Email Data</h3>
+
+<table>
+
+<th>Username</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+
+{% for d2 in data2  %}
+<tr>
+<td>{{d2.username}}</td>
+
+<td>{{d2.first_name}}</td>
+
+<td>{{d2.last_name}}</td>
+
+<td>{{d2.email}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Show Filtered by Page Category</h3>
+
+<table>
+
+<th>Username</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+
+{% for d3 in data3  %}
+<tr>
+<td>{{d3.username}}</td>
+
+<td>{{d3.first_name}}</td>
+
+<td>{{d3.last_name}}</td>
+
+<td>{{d3.email}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Show Filtered by Post Category</h3>
+
+<table>
+
+<th>Username</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+
+{% for d4 in data4 %}
+<tr>
+<td>{{d4.username}}</td>
+
+<td>{{d4.first_name}}</td>
+
+<td>{{d4.last_name}}</td>
+
+<td>{{d4.email}}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h3>Show Filtered by Song Duration</h3>
+
+<table>
+
+<th>Username</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+
+{% for d5 in data5  %}
+<tr>
+<td>{{d5.username}}</td>
+
+<td>{{d5.first_name}}</td>
+
+<td>{{d5.last_name}}</td>
+
+<td>{{d5.email}}</td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+
+</html>
