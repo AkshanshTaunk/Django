@@ -19,5 +19,6 @@ from views import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('cl/',views.MyView.as_view()),
-    path('subcl/',views.MyViewChild.as_view()),
+    # path('subcl/',views.MyViewChild.as_view()),
+    path('',views.MyView.as_view()),
 ]
