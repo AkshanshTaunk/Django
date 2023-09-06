@@ -21,12 +21,26 @@ class MyView(View):
     def get(self,request):
         context = {'msg':'Hello guys welcome to django framework'}
         return render(request,'views/home.html',context)
+
+#     FUNCTION BASED
+
+# def contactform(request):
+#     if request.method == 'POST':
+#         form = ContactForm(request.POST)
+#         if form.is_valid():
+#             form.cleaned_data['name']
+#             return HttpResponse('Thank you for submission')
+#     else:
+#         form = ContactForm()
+#     return render(request,'views/contact.html',{'fm':form})
+
+class ContactFormView(View):
+    def get(self,request):
+        form = ContactForm()
+        return render(request,'views/contact.html',{'form':form})
     
-def contactform(request):
-    if request.method == 'POST':
+    def post(self,request):
         form = ContactForm(request.POST)
         if form.is_valid():
+            form.cleaned_data['name']
             return HttpResponse('Thank you for submission')
-    else:
-        form = ContactForm()
-    return render(request,'views/contact.html',{'fm':form})
