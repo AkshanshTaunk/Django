@@ -18,4 +18,5 @@ from django.views import View
 
 class MyView(View):
     def get(self,request):
-        return render(request,'views/home.html')
+        context = {'msg':'Hello guys welcome to django framework'}
+        return render(request,'views/home.html',context)
