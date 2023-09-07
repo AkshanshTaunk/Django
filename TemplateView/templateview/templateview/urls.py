@@ -18,5 +18,5 @@ from django.urls import path
 from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.Home.as_view()),
+    path('',views.Home.as_view(extra_context={'course':'python'})),
 ]
