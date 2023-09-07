@@ -21,5 +21,6 @@ urlpatterns = [
     # path('cl/',views.MyView.as_view()),
     # path('subcl/',views.MyViewChild.as_view()),
     path('',views.MyView.as_view()),
-    path('contact/',views.ContactFormView.as_view())
+    path('contact/',views.ContactFormView.as_view()),
+    path('news/',views.NewsView.as_view()),
 ]

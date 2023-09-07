@@ -42,5 +42,11 @@ class ContactFormView(View):
     def post(self,request):
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.cleaned_data['name']
+            print(form.cleaned_data['name'])
             return HttpResponse('Thank you for submission')
+
+class NewsView(View):
+    def get(self,request):
+        template_name = 'views/news.html'
+        context = {'info':"CBI enquiry held today on goverment office"}
+        return render(request,template_name,context)
