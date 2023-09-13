@@ -1,10 +1,14 @@
 <html>
-    <head><title>ListView</title></head>
+    <head><title>DetailView</title></head>
     <body>
         <h1> Student Data </h1><br>
-        {{student.id}}
+        {{student.id}}<br>
         {{student.name}}<br>
         {{student.roll}}<br>
         {{student.course}}<br><br>
+        <hr><br>
+        <h1> Student Data </h1><br>
+        {% for student in all_student  %}
+        <li><a href="{% url "detail" student.id  %}">{{student.name}}</a><br>
         {% endfor %}
 </html>

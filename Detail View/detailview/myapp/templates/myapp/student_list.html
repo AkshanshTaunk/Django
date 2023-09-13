@@ -1,0 +1,8 @@
+<html>
+    <head><title>DetailView</title></head>
+    <body>
+        <h1> Student Data </h1><br>
+        {% for student in student_list  %}
+        <li><a href="{% url "detail" student.id  %}">{{student.name}}</a><br>
+        {% endfor %}
+</html>

@@ -18,5 +18,6 @@ from django.urls import path
 from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('student/<int:pk>',views.StudentDetailView.as_view())
+    path('list/',views.StudentListView.as_view(),name='list'),
+    path('detail/<int:id>',views.StudentDetailView.as_view(),name='detail'),
 ]
