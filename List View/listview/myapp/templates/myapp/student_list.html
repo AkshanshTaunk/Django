@@ -1,10 +1,17 @@
 <html>
     <head><title>ListView</title></head>
     <body>
-        {% for student in student_list %}
-        {{student.name}},
-        {{student.roll}},
-        {{student.course}},
+        <h1> Student Data </h1>
+        {% for student in student_list %}<br>
+        {{student.name}}<br>
+        {{student.roll}}<br>
+        {{student.course}}<br><br>
+        {% endfor %}
+        <h1> Freshers Data </h1>
+        {% for fresh in freshers %}<br>
+        {{fresh.name}}<br>
+        {{fresh.roll}}<br>
+        {{fresh.course}}<br>
         {% endfor %}
     </body>
 </html>
