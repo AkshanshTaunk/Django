@@ -19,4 +19,5 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('contact/',views.ContactFormView.as_view()),
+    path('thanks/',views.ThanksTemplateView.as_view()),
 ]
