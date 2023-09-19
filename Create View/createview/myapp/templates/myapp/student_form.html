@@ -1,12 +1,23 @@
-<html>
+{% comment %} <html>
     <head>
         <title>CreateView</tiltle>
     </head>
         <body>
-            <form action="" method="post">
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="send">
-            </form>
+            
         </body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>CreateView</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="send">
+    </form>
+</body>
+
 </html>
