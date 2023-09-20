@@ -55,7 +55,7 @@ ROOT_URLCONF = 'updateview.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'D:\Django\Update View\updateview\myapp\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
