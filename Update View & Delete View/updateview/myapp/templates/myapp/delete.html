@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deleted</title>
+</head>
+
+<body>
+<h1>Are you sure?</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="delete">
+    <a href="{% url 'create' %}">cancel</a>
+</form>
+</body>
+
+</html>

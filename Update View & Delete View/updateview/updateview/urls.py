@@ -19,7 +19,8 @@ from myapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('thanks/', views.ThanksTemplateView.as_view()),
-    path('create/', views.StudentCreateView.as_view()),
+    path('create/', views.StudentCreateView.as_view(),name="create"),
     path('update/<int:pk>', views.StudentUpdateView.as_view()),
     path('thanksupdate/', views.UpdateTemplateView.as_view()),
+    path('delete/<int:pk>', views.StudentDeleteView.as_view()),
 ]
