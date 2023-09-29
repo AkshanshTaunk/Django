@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ChangePassword</title>
+</head>
+
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Change">
+    <a href="{% url 'dashboard' %}">Cancel</a>
+</form>
+</body>
+</html>
